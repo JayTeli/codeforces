@@ -1,6 +1,10 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
+/**
+ *	https://www.hackerrank.com/challenges/java-stdin-and-stdout-1/problem 
+ *
+ */
 public class HR_StdInOut {
 	public static void main(String[] args) {
 		try {
