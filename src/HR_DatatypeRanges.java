@@ -27,7 +27,7 @@ public class HR_DatatypeRanges {
 			System.out.println(e);
 		}
 	}
-
+	
 	private String handleTestCase(BufferedReader br) throws IOException {
 		String[] x = br.readLine().split(" ");
 		long n = 0;
@@ -47,6 +47,7 @@ public class HR_DatatypeRanges {
 			return n + " can't be fitted anywhere.";
 		} else {
 			String ans =  n + " can be fitted in:\n";
+			output = output.substring(0, output.length()-1); // remove trailing new line
 			return ans + output;
 		}
 	}
@@ -55,28 +56,34 @@ public class HR_DatatypeRanges {
 	 * Byte = 8 bits
 	 */
 	private String isByte(long n) {
-		boolean isInRange = ( n > -Math.pow(2, 7)) && ( n < (Math.pow(2, 7) - 1)) ? true : false;  
+		boolean isInRange = ( n >= -Math.pow(2, 7)) && ( n <= (Math.pow(2, 7) - 1)) ? true : false;  
 		return isInRange ? "* byte\n" : "";
 	}
 	/**
 	 * Short = 16 bits
 	 */
 	private String isShort(long n) {
-		boolean isInRange = ( n > -Math.pow(2, 15)) && ( n < (Math.pow(2, 15) - 1)) ? true : false;  
+		boolean isInRange = ( n >= -Math.pow(2, 15)) && ( n <= (Math.pow(2, 15) - 1)) ? true : false;  
 		return isInRange ? "* short\n" : "";
 	}
 	/**
 	 * Int = 32 bits
 	 */
 	private String isInt(long n) {
-		boolean isInRange = ( n > -Math.pow(2, 31)) && ( n < (Math.pow(2, 31) - 1)) ? true : false;  
+		boolean isInRange = ( n >= -Math.pow(2, 31)) && ( n <= (Math.pow(2, 31) - 1)) ? true : false;  
 		return isInRange ? "* int\n" : "";
 	}
 	/**
 	 * Long = 64 bits
 	 */
 	private String isLong(long n) {
-		boolean isInRange = ( n > -Math.pow(2, 63)) && ( n < (Math.pow(2, 63) - 1)) ? true : false;  
+		boolean isInRange = ( n >= -Math.pow(2, 63)) && ( n <= (Math.pow(2, 63) - 1)) ? true : false;  
 		return isInRange ? "* long\n" : "";
 	}
 }
+
+
+
+
+
+
